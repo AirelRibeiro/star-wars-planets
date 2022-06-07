@@ -1,0 +1,53 @@
+{
+  "name": "sd-0x-project-react-context-hooks-starwars-datatable-filters",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.js"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test-coverage": "react-scripts test --coverage --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint:styles": "npx stylelint '**/*.css'",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@sheerun/mutationobserver-shim": "0.3.3",
+    "eslint": "^7.32.0",
+    "eslint-config-trybe-frontend": "1.2.3",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "stylelint": "13.8.0",
+    "stylelint-order": "4.1.0"
+  }
+}
