@@ -8,31 +8,39 @@ const SelectsOrderFilter = () => {
       <select
         name="column"
         data-testid="column-sort"
-        value={  }
-        onChange={  }
+        // value={  }
+        // onChange={  }
       >
         {columnFilter
           .map((option) => (<option key={ option } value={ option }>{ option }</option>))}
       </select>
       <fieldset>
         <legend>Select order</legend>
+        <label htmlFor="ASC">
           <input
-          type="radio"
-          data-testid="column-sort-input-asc"
-          name="drone"
-          value="ASC" />
-          <label for="huey">Huey</label>
+            type="radio"
+            data-testid="column-sort-input-asc"
+            id="ASC"
+            name="sort"
+            value="ASC"
+          />
+          Ascendente
+        </label>
+        <label htmlFor="DESC">
           <input
-          type="radio"
-          data-testid="column-sort-input-desc"
-          name="drone"
-          value="DESC" />
-          <label for="huey">Huey</label>
+            type="radio"
+            data-testid="column-sort-input-desc"
+            id="DESC"
+            name="sort"
+            value="DESC"
+          />
+          Descendente
+        </label>
       </fieldset>
       <button
         type="button"
         data-testid="column-sort-button"
-        onClick={}
+        // onClick={}
       >
         Ordenar
       </button>
