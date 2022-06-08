@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
 
 const SelectsFilter = () => {
@@ -9,6 +9,8 @@ const SelectsFilter = () => {
     setDataForFilter,
     selectFiltersAvailables,
     setSelectFiltersAvailables } = useContext(PlanetsContext);
+
+  const [usedFilters, setUsedFilters] = useState();
 
   const handleSelectChange = ({ target }) => {
     const newSelectFilter = [{ ...selectNumberFilter[0], [target.name]: target.value }];
