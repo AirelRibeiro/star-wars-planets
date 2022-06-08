@@ -23,7 +23,6 @@ const PlanetsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log('passei aqui!');
     fetchPlanetsInformation();
   }, []);
 
