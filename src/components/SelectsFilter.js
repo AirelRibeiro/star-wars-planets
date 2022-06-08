@@ -6,11 +6,18 @@ const SelectsFilter = () => {
     selectNumberFilter,
     setSelectNumberFilter,
     dataForFilter,
-    setDataForFilter } = useContext(PlanetsContext);
+    setDataForFilter,
+    selectFiltersAvailables,
+    setSelectFiltersAvailables } = useContext(PlanetsContext);
 
   const handleSelectChange = ({ target }) => {
     const newSelectFilter = [{ ...selectNumberFilter[0], [target.name]: target.value }];
     setSelectNumberFilter(newSelectFilter);
+  };
+
+  const availablesFilters = (usedFilter) => {
+    const newOptions = selectFiltersAvailables.filter((option) => option !== usedFilter);
+    setSelectFiltersAvailables(newOptions);
   };
 
   const filteredPlanets = (filterType, comparsionType, number) => {
@@ -18,16 +25,19 @@ const SelectsFilter = () => {
       const newPlanetsData = dataForFilter
         .filter((planet) => planet[filterType] > Number(number));
       setDataForFilter(newPlanetsData);
+      availablesFilters(filterType);
     }
     if (comparsionType === 'menor que') {
       const newPlanetsData = dataForFilter
         .filter((planet) => planet[filterType] < Number(number));
       setDataForFilter(newPlanetsData);
+      availablesFilters(filterType);
     }
     if (comparsionType === 'igual a') {
       const newPlanetsData = dataForFilter
         .filter((planet) => planet[filterType] === number);
       setDataForFilter(newPlanetsData);
+      availablesFilters(filterType);
     }
   };
 
@@ -50,11 +60,9 @@ const SelectsFilter = () => {
         value={ selectNumberFilter[0].column }
         onChange={ handleSelectChange }
       >
-        <option value="population">population</option>
-        <option value="orbital_period">orbital_period</option>
-        <option value="diameter">diameter</option>
-        <option value="rotation_period">rotation_period</option>
-        <option value="surface_water">surface_water</option>
+        {selectFiltersAvailables
+          .map((option) => (<option key={ option } value={ option }>{ option }</option>))}
+
       </select>
       <select
         name="comparison"
