@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
 
 const SelectsFilter = () => {
@@ -8,7 +8,8 @@ const SelectsFilter = () => {
     dataForFilter,
     setDataForFilter,
     selectFiltersAvailables,
-    setSelectFiltersAvailables } = useContext(PlanetsContext);
+    setSelectFiltersAvailables,
+    data } = useContext(PlanetsContext);
 
   const [usedFilters, setUsedFilters] = useState([]);
   const [isFiltered, setIsFiltered] = useState(false);
@@ -32,14 +33,6 @@ const SelectsFilter = () => {
     };
     setUsedFilters([...usedFilters, filter]);
     setIsFiltered(true);
-  };
-
-  const deletFilter = (usedFilter) => {
-    const newArrayOfFilters = usedFilters.filter(({ filter }) => filter !== usedFilter);
-    setUsedFilters(newArrayOfFilters);
-    if (newArrayOfFilters.length <= 0) {
-      setIsFiltered(false);
-    }
   };
 
   const filteredPlanets = (filterType, comparsionType, number) => {
@@ -66,21 +59,46 @@ const SelectsFilter = () => {
     }
   };
 
-  // const selectedFilters = (filterType, comparsionType, number) => {
-  //   switch (filterType) {
-  //   case 'population':
+  const refreshFilters = (arrayForFilter, filterType, comparsionType, number) => {
+    switch (comparsionType) {
+    case 'maior que':
+      return arrayForFilter
+        .filter((planet) => planet[filterType] > Number(number));
+    case 'menor que':
+      return arrayForFilter
+        .filter((planet) => planet[filterType] < Number(number));
+    case 'igual a':
+      return arrayForFilter
+        .filter((planet) => planet[filterType] > number);
+    default:
+      break;
+    }
+  };
 
-  //     break;
-
-  //   default:
-  //     break;
-  //   }
-  // };
+  const deletFilter = (usedFilter) => {
+    const allFilters = [
+      'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'];
+    const newArrayOfFilters = usedFilters.filter(({ filter }) => filter !== usedFilter);
+    setUsedFilters(newArrayOfFilters);
+    let planetsData = [...data];
+    newArrayOfFilters.forEach(({ filterType, comparsionType, number }) => {
+      planetsData = refreshFilters(planetsData, filterType, comparsionType, number);
+    });
+    setDataForFilter(planetsData);
+    const newOptions = allFilters
+      .filter((filter) => !newArrayOfFilters
+        .map(({ filterType }) => filterType).includes(filter));
+    console.log(newOptions);
+    setSelectFiltersAvailables(newOptions);
+    if (newArrayOfFilters.length <= 0) {
+      setIsFiltered(false);
+    }
+  };
 
   return (
     <div>
       {isFiltered && usedFilters.map(({ filter: usedFilter }) => (
-        <p key={ usedFilter }>
+        <p key={ usedFilter } data-testid="filter">
           {usedFilter}
           <button type="button" onClick={ () => deletFilter(usedFilter) }>X</button>
         </p>
@@ -123,6 +141,17 @@ const SelectsFilter = () => {
 
       >
         Filtrar
+      </button>
+      <button
+        type="button"
+        data-testid="button-remove-filters"
+        onClick={
+          () => (
+            setDataForFilter([...data]))
+        }
+
+      >
+        Remover filtros
       </button>
     </div>
   );
