@@ -1,30 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PlanetsContext from './PlanetsContext';
-import response from '../testData';
+// import response from '../testData';
 
 const PlanetsProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [filterByName, setFilterByName] = useState('');
-  const [selectFilter, setSelectFilter] = useState([{
+  const [selectNumberFilter, setSelectNumberFilter] = useState([{
     column: 'population',
     comparison: 'maior que',
-    value: '100000',
+    value: 0,
   }]);
+  const [dataForFilter, setDataForFilter] = useState([]);
 
   const fetchPlanetsInformation = async () => {
     const planetsResponse = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const planetsData = await planetsResponse.json();
-    setData(response.results);
+    setData(planetsData.results);
+    setDataForFilter(planetsData.results);
   };
+
+  useEffect(() => {
+    console.log('passei aqui!');
+    fetchPlanetsInformation();
+  }, []);
 
   const context = {
     data,
     fetchPlanetsInformation,
     filterByName,
     setFilterByName,
-    selectFilter,
-    setSelectFilter };
+    selectNumberFilter,
+    setSelectNumberFilter,
+    dataForFilter,
+    setDataForFilter,
+  };
 
   return (
     <PlanetsContext.Provider value={ context }>
