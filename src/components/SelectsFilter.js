@@ -24,13 +24,18 @@ const SelectsFilter = () => {
   };
 
   const saveFilter = (filterType, comparsionType, number) => {
-    const filter = `${filterType} ${comparsionType} ${number}`;
+    const filter = {
+      filterType,
+      comparsionType,
+      number,
+      filter: `${filterType} ${comparsionType} ${number}`,
+    };
     setUsedFilters([...usedFilters, filter]);
     setIsFiltered(true);
   };
 
   const deletFilter = (usedFilter) => {
-    const newArrayOfFilters = usedFilters.filter((filter) => filter !== usedFilter);
+    const newArrayOfFilters = usedFilters.filter(({ filter }) => filter !== usedFilter);
     setUsedFilters(newArrayOfFilters);
     if (newArrayOfFilters.length <= 0) {
       setIsFiltered(false);
@@ -74,7 +79,7 @@ const SelectsFilter = () => {
 
   return (
     <div>
-      {isFiltered && usedFilters.map((usedFilter) => (
+      {isFiltered && usedFilters.map(({ filter: usedFilter }) => (
         <p key={ usedFilter }>
           {usedFilter}
           <button type="button" onClick={ () => deletFilter(usedFilter) }>X</button>
