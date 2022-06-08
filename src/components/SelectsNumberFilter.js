@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
 
-const SelectsFilter = () => {
+const SelectsNumberFilter = () => {
   const {
     selectNumberFilter,
     setSelectNumberFilter,
@@ -157,4 +157,4 @@ const SelectsFilter = () => {
   );
 };
 
-export default SelectsFilter;
+export default SelectsNumberFilter;
