@@ -4,11 +4,50 @@ import PlanetsContext from '../context/PlanetsContext';
 const SelectsOrderFilter = () => {
   const [columnFilter] = useState([
     'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water']);
-  const { selectOrderFilter, setSelectOrderFilter } = useContext(PlanetsContext);
+  const {
+    selectOrderFilter,
+    setSelectOrderFilter,
+    dataForFilter,
+    setDataForFilter } = useContext(PlanetsContext);
 
   const handleSelectChange = ({ target }) => {
     const newSelectFilter = [{ ...selectOrderFilter[0], [target.name]: target.value }];
     setSelectOrderFilter(newSelectFilter);
+  };
+
+  const orderAscSort = (column) => {
+    const magicNumber = -1;
+    const newPlanets = [...dataForFilter]
+      .sort((planetA, planetB) => {
+        if (planetA[column] === 'unknown') return magicNumber;
+        if (planetB[column] === 'unknown') return magicNumber;
+        if (Number(planetA[column]) > Number(planetB[column])) return 1;
+        if (Number(planetA[column]) < Number(planetB[column])) return magicNumber;
+        return 0;
+      });
+    setDataForFilter(newPlanets);
+  };
+
+  const orderDescSort = (column) => {
+    const magicNumber = -1;
+    const newPlanets = [...dataForFilter]
+      .sort((planetA, planetB) => {
+        if (planetA[column] === 'unknown') return 1;
+        if (planetB[column] === 'unknown') return magicNumber;
+        if (Number(planetA[column]) > Number(planetB[column])) return magicNumber;
+        if (Number(planetA[column]) < Number(planetB[column])) return 1;
+        return 0;
+      });
+    setDataForFilter(newPlanets);
+  };
+
+  const sortPlanets = () => {
+    const { column, sort } = selectOrderFilter[0];
+    if (sort === 'ASC') {
+      orderAscSort(column);
+    } else {
+      orderDescSort(column);
+    }
   };
 
   return (
@@ -34,6 +73,7 @@ const SelectsOrderFilter = () => {
           <input
             type="radio"
             data-testid="column-sort-input-asc"
+            onChange={ handleSelectChange }
             id="ASC"
             name="sort"
             value="ASC"
@@ -44,6 +84,7 @@ const SelectsOrderFilter = () => {
           <input
             type="radio"
             data-testid="column-sort-input-desc"
+            onChange={ handleSelectChange }
             id="DESC"
             name="sort"
             value="DESC"
@@ -53,6 +94,7 @@ const SelectsOrderFilter = () => {
         <button
           type="button"
           data-testid="column-sort-button"
+          onClick={ sortPlanets }
         >
           Ordenar
         </button>
