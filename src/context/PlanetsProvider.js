@@ -20,10 +20,12 @@ const PlanetsProvider = ({ children }) => {
   }]);
 
   const fetchPlanetsInformation = async () => {
+    const magicNumber = -1;
     const planetsResponse = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const planetsData = await planetsResponse.json();
     setData(planetsData.results);
-    setDataForFilter(planetsData.results);
+    setDataForFilter(planetsData.results
+      .sort((a, b) => (a.name > b.name ? 1 : magicNumber)));
   };
 
   useEffect(() => {
