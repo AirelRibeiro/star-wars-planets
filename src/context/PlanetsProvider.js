@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PlanetsContext from './PlanetsContext';
-// import response from '../testData';
+import fetchPlanetsInformation from '../API/fetchApi';
 
 const PlanetsProvider = ({ children }) => {
   const [data, setData] = useState([]);
@@ -19,17 +19,8 @@ const PlanetsProvider = ({ children }) => {
     sort: 'ASC',
   }]);
 
-  const fetchPlanetsInformation = async () => {
-    const magicNumber = -1;
-    const planetsResponse = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
-    const planetsData = await planetsResponse.json();
-    setData(planetsData.results);
-    setDataForFilter(planetsData.results
-      .sort((a, b) => (a.name > b.name ? 1 : magicNumber)));
-  };
-
   useEffect(() => {
-    fetchPlanetsInformation();
+    fetchPlanetsInformation(setData, setDataForFilter);
   }, []);
 
   const context = {
