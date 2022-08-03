@@ -7,7 +7,6 @@ const FilterInput = () => {
   return (
     <input
       type="text"
-      data-testid="name-filter"
       value={ filterByName }
       onChange={ handleName }
     />

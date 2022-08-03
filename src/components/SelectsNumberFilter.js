@@ -98,14 +98,13 @@ const SelectsNumberFilter = () => {
   return (
     <div>
       {isFiltered && usedFilters.map(({ filter: usedFilter }) => (
-        <p key={ usedFilter } data-testid="filter">
+        <p key={ usedFilter }>
           {usedFilter}
           <button type="button" onClick={ () => deletFilter(usedFilter) }>X</button>
         </p>
       ))}
       <select
         name="column"
-        data-testid="column-filter"
         value={ selectNumberFilter[0].column }
         onChange={ handleSelectChange }
       >
@@ -115,7 +114,6 @@ const SelectsNumberFilter = () => {
       </select>
       <select
         name="comparison"
-        data-testid="comparison-filter"
         value={ selectNumberFilter[0].comparison }
         onChange={ handleSelectChange }
       >
@@ -126,13 +124,11 @@ const SelectsNumberFilter = () => {
       <input
         type="number"
         name="value"
-        data-testid="value-filter"
         value={ selectNumberFilter[0].value }
         onChange={ handleSelectChange }
       />
       <button
         type="button"
-        data-testid="button-filter"
         onClick={
           () => (
             filteredPlanets(selectNumberFilter[0].column,
@@ -144,7 +140,6 @@ const SelectsNumberFilter = () => {
       </button>
       <button
         type="button"
-        data-testid="button-remove-filters"
         onClick={
           () => (
             setDataForFilter([...data]))

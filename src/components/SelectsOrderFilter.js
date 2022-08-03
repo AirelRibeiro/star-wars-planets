@@ -56,7 +56,6 @@ const SelectsOrderFilter = () => {
         <legend>Select order</legend>
         <select
           name="column"
-          data-testid="column-sort"
           value={ selectOrderFilter[0].column }
           onChange={ handleSelectChange }
         >
@@ -72,7 +71,6 @@ const SelectsOrderFilter = () => {
         <label htmlFor="ASC">
           <input
             type="radio"
-            data-testid="column-sort-input-asc"
             onChange={ handleSelectChange }
             id="ASC"
             name="sort"
@@ -83,7 +81,6 @@ const SelectsOrderFilter = () => {
         <label htmlFor="DESC">
           <input
             type="radio"
-            data-testid="column-sort-input-desc"
             onChange={ handleSelectChange }
             id="DESC"
             name="sort"
@@ -93,7 +90,6 @@ const SelectsOrderFilter = () => {
         </label>
         <button
           type="button"
-          data-testid="column-sort-button"
           onClick={ sortPlanets }
         >
           Ordenar
