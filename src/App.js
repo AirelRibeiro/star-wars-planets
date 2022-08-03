@@ -4,11 +4,12 @@ import Table from './components/Table';
 import FilterInput from './components/FilterInput';
 import SelectsNumberFilter from './components/SelectsNumberFilter';
 import SelectsOrderFilter from './components/SelectsOrderFilter';
-import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <PlanetsProvider>
+      <Header />
       <FilterInput />
       <SelectsNumberFilter />
       <SelectsOrderFilter />
