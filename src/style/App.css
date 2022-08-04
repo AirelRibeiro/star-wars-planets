@@ -1,4 +1,9 @@
-.body {
+body {
   background-image: url('../images/background.png');
   background-size: conver;
+}
+
+.selects-div {
+  display: flex;
+  justify-content: space-evenly;
 }
