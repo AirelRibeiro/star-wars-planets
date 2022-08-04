@@ -1,0 +1,20 @@
+.filter-number-div {
+  align-items: center;
+  border: 2px solid antiquewhite;
+  display: flex;
+  height: 7vh;
+  justify-content: space-evenly;
+  width: 50vw;
+}
+
+.filter-number-div select{
+  height: 4vh;
+  text-align: center;
+  width: 10vw;
+}
+
+.filter-number-div input{
+  height: 3vh;
+  text-align: center;
+  width: 5vw;
+}
