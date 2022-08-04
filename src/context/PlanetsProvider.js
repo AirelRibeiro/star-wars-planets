@@ -18,6 +18,8 @@ const PlanetsProvider = ({ children }) => {
     column: 'population',
     sort: 'ASC',
   }]);
+  const [usedFilters, setUsedFilters] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
 
   useEffect(() => {
     fetchPlanetsInformation(setData, setDataForFilter);
@@ -36,6 +38,10 @@ const PlanetsProvider = ({ children }) => {
     setSelectFiltersAvailables,
     selectOrderFilter,
     setSelectOrderFilter,
+    usedFilters,
+    setUsedFilters,
+    isFiltered,
+    setIsFiltered,
   };
 
   return (
