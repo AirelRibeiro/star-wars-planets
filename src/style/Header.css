@@ -2,8 +2,7 @@
 
 .header {
   align-items: center;
-  border: solid black 1px;
-  color: rgb(230, 224, 230);
+  color: #b5b6ff;
   display: flex;
   font-family: 'Kanit', sans-serif;
   font-size: xx-large;
@@ -24,7 +23,7 @@ h1 {
   }
 
   to {
-    filter: drop-shadow(0 -6mm 2mm rgb(255, 254, 170));
+    filter: drop-shadow(0 -6mm 2mm rgb(10, 107, 252));
   }
 
 }
