@@ -1,0 +1,12 @@
+.filter-by-name-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3vh;
+}
+
+.filter-by-name-div input {
+  height: 5vh;
+  margin: auto;
+  text-align: center;
+  width: 20vw;
+}
