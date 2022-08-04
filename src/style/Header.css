@@ -2,7 +2,6 @@
 
 .header {
   align-items: center;
-  background-color: rgb(2, 11, 16);
   border: solid black 1px;
   color: rgb(230, 224, 230);
   display: flex;
