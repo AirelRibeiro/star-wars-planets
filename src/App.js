@@ -6,6 +6,7 @@ import SelectsNumberFilter from './components/SelectsNumberFilter';
 import SelectsOrderFilter from './components/SelectsOrderFilter';
 import Header from './components/Header';
 import './style/App.css';
+import AppliedFilters from './components/AppliedFilters';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <SelectsNumberFilter />
           <SelectsOrderFilter />
         </div>
+        <AppliedFilters />
         <Table>Hello, App!</Table>
       </div>
     </PlanetsProvider>
