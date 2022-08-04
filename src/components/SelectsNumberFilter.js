@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
+import '../style/SelectsNumberFilter.css';
 
 const SelectsNumberFilter = () => {
   const {
@@ -96,7 +97,8 @@ const SelectsNumberFilter = () => {
   };
 
   return (
-    <div>
+    <fieldset className="filter-number-div">
+      <legend>Filtros numéricos</legend>
       {isFiltered && usedFilters.map(({ filter: usedFilter }) => (
         <p key={ usedFilter }>
           {usedFilter}
@@ -117,9 +119,9 @@ const SelectsNumberFilter = () => {
         value={ selectNumberFilter[0].comparison }
         onChange={ handleSelectChange }
       >
-        <option value="maior que">maior que</option>
-        <option value="menor que">menor que</option>
-        <option value="igual a">igual a</option>
+        <option value="maior que">Maior que</option>
+        <option value="menor que">Menor que</option>
+        <option value="igual a">Igual a</option>
       </select>
       <input
         type="number"
@@ -127,6 +129,7 @@ const SelectsNumberFilter = () => {
         value={ selectNumberFilter[0].value }
         onChange={ handleSelectChange }
       />
+      <div />
       <button
         type="button"
         onClick={
@@ -140,15 +143,15 @@ const SelectsNumberFilter = () => {
       </button>
       <button
         type="button"
-        onClick={
-          () => (
-            setDataForFilter([...data]))
-        }
-
+        onClick={ () => {
+          setDataForFilter([...data]);
+          setIsFiltered(false);
+          setUsedFilters([]);
+        } }
       >
         Remover filtros
       </button>
-    </div>
+    </fieldset>
   );
 };
 
