@@ -5,15 +5,18 @@ import FilterInput from './components/FilterInput';
 import SelectsNumberFilter from './components/SelectsNumberFilter';
 import SelectsOrderFilter from './components/SelectsOrderFilter';
 import Header from './components/Header';
+import './style/App.css';
 
 function App() {
   return (
     <PlanetsProvider>
-      <Header />
-      <FilterInput />
-      <SelectsNumberFilter />
-      <SelectsOrderFilter />
-      <Table>Hello, App!</Table>
+      <div className="body">
+        <Header />
+        <FilterInput />
+        <SelectsNumberFilter />
+        <SelectsOrderFilter />
+        <Table>Hello, App!</Table>
+      </div>
     </PlanetsProvider>
   );
 }
