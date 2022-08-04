@@ -53,7 +53,7 @@ const SelectsOrderFilter = () => {
   return (
     <div>
       <fieldset>
-        <legend>Select order</legend>
+        <legend>Filtros de ordenação</legend>
         <select
           name="column"
           value={ selectOrderFilter[0].column }
