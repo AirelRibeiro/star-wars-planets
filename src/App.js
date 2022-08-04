@@ -13,8 +13,10 @@ function App() {
       <div className="body">
         <Header />
         <FilterInput />
-        <SelectsNumberFilter />
-        <SelectsOrderFilter />
+        <div className="selects-div">
+          <SelectsNumberFilter />
+          <SelectsOrderFilter />
+        </div>
         <Table>Hello, App!</Table>
       </div>
     </PlanetsProvider>
