@@ -4,6 +4,17 @@ body {
 }
 
 .selects-div {
+  background-color: rgba(16, 1, 43, 0.5);
+  border-radius: 50px;
   display: flex;
+  flex-direction: column;
+  height: 20vh;
   justify-content: space-evenly;
+  margin: auto;
+  width: 80vw;
 }
+
+/* #282A3B
+#F7EC1B
+#E6E0E6
+#181818 */
