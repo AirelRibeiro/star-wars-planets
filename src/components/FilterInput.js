@@ -11,7 +11,7 @@ const FilterInput = () => {
         type="text"
         value={ filterByName }
         onChange={ handleName }
-        placeholder="Busque seu planeta pelo nome"
+        placeholder="Search by name"
       />
     </div>
   );
