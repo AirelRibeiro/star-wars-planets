@@ -3,6 +3,8 @@ import '../style/AppliedFilters.css';
 import PlanetsContext from '../context/PlanetsContext';
 
 const AppliedFilters = () => {
+  const allFilters = [
+    'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'];
   const {
     setDataForFilter,
     setSelectFiltersAvailables,
@@ -47,7 +49,7 @@ const AppliedFilters = () => {
   };
 
   return (
-    <div>
+    <div className="applied-filters-div">
       {isFiltered && usedFilters.map(({ filter: usedFilter }) => (
         <p key={ usedFilter }>
           {usedFilter}
