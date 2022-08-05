@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
+import '../style/SelectOrderFilter.css';
 
 const SelectsOrderFilter = () => {
   const [columnFilter] = useState([
@@ -51,54 +52,48 @@ const SelectsOrderFilter = () => {
   };
 
   return (
-    <div>
-      <fieldset>
-        <legend>Select order</legend>
-        <select
-          name="column"
-          data-testid="column-sort"
-          value={ selectOrderFilter[0].column }
+    <div className="filter-order-div">
+      <legend>ORDENATION FILTERS</legend>
+      <select
+        name="column"
+        value={ selectOrderFilter[0].column }
+        onChange={ handleSelectChange }
+      >
+        {columnFilter
+          .map((option) => (
+            <option
+              key={ option }
+              value={ option }
+            >
+              { option }
+            </option>))}
+      </select>
+      <label htmlFor="ASC">
+        <input
+          type="radio"
           onChange={ handleSelectChange }
-        >
-          {columnFilter
-            .map((option) => (
-              <option
-                key={ option }
-                value={ option }
-              >
-                { option }
-              </option>))}
-        </select>
-        <label htmlFor="ASC">
-          <input
-            type="radio"
-            data-testid="column-sort-input-asc"
-            onChange={ handleSelectChange }
-            id="ASC"
-            name="sort"
-            value="ASC"
-          />
-          Ascendente
-        </label>
-        <label htmlFor="DESC">
-          <input
-            type="radio"
-            data-testid="column-sort-input-desc"
-            onChange={ handleSelectChange }
-            id="DESC"
-            name="sort"
-            value="DESC"
-          />
-          Descendente
-        </label>
-        <button
-          type="button"
-          data-testid="column-sort-button"
-          onClick={ sortPlanets }
-        >
-          Ordenar
-        </button>
-      </fieldset>
+          id="ASC"
+          name="sort"
+          value="ASC"
+        />
+        ASCENDING
+      </label>
+      <label htmlFor="DESC">
+        <input
+          type="radio"
+          onChange={ handleSelectChange }
+          id="DESC"
+          name="sort"
+          value="DESC"
+        />
+        DESCENDING
+      </label>
+      <button
+        type="button"
+        onClick={ sortPlanets }
+      >
+        Ordenar
+      </button>
     </div>
   );
 };

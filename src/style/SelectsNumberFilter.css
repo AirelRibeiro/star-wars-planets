@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+.filter-number-div {
+  align-items: center;
+  color: rgb(230, 224, 230);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  font-family: 'Trocchi', serif;
+  font-size: 1.0rem;
+  height: 7vh;
+  justify-content: space-evenly;
+  /* width: 50vw; */
+}
+
+.filter-number-div select{
+  border-radius: 5px;
+  font-family: 'Trocchi', serif;
+  height: 5vh;
+  text-align: center;
+  width: 10vw;
+}
+
+.filter-number-div input{
+  border-radius: 5px;
+  font-family: 'Trocchi', serif;
+  height: 4vh;
+  text-align: center;
+  width: 5vw;
+}
+
+.filter-number-div button{
+  border-radius: 20px;
+  font-family: 'Trocchi', serif;
+  height: 5vh;
+  text-align: center;
+}

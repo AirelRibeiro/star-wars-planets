@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PlanetsContext from './PlanetsContext';
-// import response from '../testData';
+import fetchPlanetsInformation from '../API/fetchApi';
 
 const PlanetsProvider = ({ children }) => {
   const [data, setData] = useState([]);
@@ -18,18 +18,11 @@ const PlanetsProvider = ({ children }) => {
     column: 'population',
     sort: 'ASC',
   }]);
-
-  const fetchPlanetsInformation = async () => {
-    const magicNumber = -1;
-    const planetsResponse = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
-    const planetsData = await planetsResponse.json();
-    setData(planetsData.results);
-    setDataForFilter(planetsData.results
-      .sort((a, b) => (a.name > b.name ? 1 : magicNumber)));
-  };
+  const [usedFilters, setUsedFilters] = useState([]);
+  const [isFiltered, setIsFiltered] = useState(false);
 
   useEffect(() => {
-    fetchPlanetsInformation();
+    fetchPlanetsInformation(setData, setDataForFilter);
   }, []);
 
   const context = {
@@ -45,6 +38,10 @@ const PlanetsProvider = ({ children }) => {
     setSelectFiltersAvailables,
     selectOrderFilter,
     setSelectOrderFilter,
+    usedFilters,
+    setUsedFilters,
+    isFiltered,
+    setIsFiltered,
   };
 
   return (

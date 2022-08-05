@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PlanetsContext from '../context/PlanetsContext';
+import '../style/Table.css';
 
 const Table = () => {
   const {
@@ -29,23 +30,23 @@ const Table = () => {
         {dataForFilter
           .filter(({ name }) => name.includes(filterByName)).map((planet) => (
             <tr key={ planet.name }>
-              <td data-testid="planet-name">{ planet.name }</td>
-              <td>{ planet.rotation_period }</td>
-              <td>{ planet.orbital_period }</td>
-              <td>{ planet.diameter}</td>
-              <td>{ planet.climate }</td>
-              <td>{ planet.gravity}</td>
-              <td>{ planet.terrain }</td>
-              <td>{ planet.surface_water }</td>
-              <td>{ planet.population }</td>
+              <td data-testid="planet-name"><p>{ planet.name }</p></td>
+              <td><p>{ planet.rotation_period }</p></td>
+              <td><p>{ planet.orbital_period }</p></td>
+              <td><p>{ planet.diameter}</p></td>
+              <td><p>{ planet.climate }</p></td>
+              <td><p>{ planet.gravity}</p></td>
+              <td><p>{ planet.terrain }</p></td>
+              <td><p>{ planet.surface_water }</p></td>
+              <td><p>{ planet.population }</p></td>
               <td>
                 { planet.films.map((film) => (
-                  <p key={ film }>film</p>
+                  <p key={ film }>{film}</p>
                 )) }
               </td>
-              <td>{ planet.created }</td>
-              <td>{ planet.edited}</td>
-              <td>{ planet.url }</td>
+              <td><p>{ planet.created }</p></td>
+              <td><p>{ planet.edited}</p></td>
+              <td><p>{ planet.url }</p></td>
             </tr>
           ))}
       </tbody>

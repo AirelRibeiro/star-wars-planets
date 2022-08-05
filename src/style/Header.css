@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+.header {
+  align-items: center;
+  color: #b5b6ff;
+  display: flex;
+  font-family: 'Kanit', sans-serif;
+  font-size: xx-large;
+  height: 20vh;
+  justify-content: center;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+
+h1 {
+  animation: filterGlow 1s infinite alternate;
+}
+
+@keyframes filterGlow {
+
+  from {
+    filter: none;
+  }
+
+  to {
+    filter: drop-shadow(0 -6mm 2mm rgb(10, 107, 252));
+  }
+
+}

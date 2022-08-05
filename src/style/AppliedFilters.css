@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+.applied-filters-div {
+  background-color: rgba(40, 42, 59, 0.15);
+  border-radius: 50px;
+  display: flex;
+  font-family: 'Trocchi', serif;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+}
+
+.applied-filters-div p {
+  align-items: center;
+  color: rgb(230, 224, 230);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Trocchi', serif;
+  font-size: 1.0rem;
+  width: 20vw;
+}
+
+p button {
+  background-color: rgb(245, 244, 238);
+  border: rgb(255, 221, 0) solid 1px;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  font-family: 'Trocchi', serif;
+  padding: 2px 5px;
+}
