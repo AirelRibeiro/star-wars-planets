@@ -7,6 +7,13 @@
 
 <p text-align="justify" >Este projeto envolve a construção de uma tabela contendo os planetas do universo Star Wars. A proposta foi requisitar dados da <a href="https://swapi.dev/" target="_blank">SWAPI</a> e estruturar uma tabela com a possibilidade de filtrar os planetas por suas características, tais como população, período orbital e diâmetro.</p>
 
+## Escolha seu transpote favorito e clique para navegar até a página:
+
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/b11295ad-e6ff-452f-a2f1-7b6d65c50f70/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/39db3582-89c2-43a1-802d-cc28c2b7f433/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/3a3fa9a1-ebb7-475c-bed2-f629e091f13c/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/5d4a48e7-2f4b-48f7-834c-d8b210651486/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
+
 ## Ferramentas utilizadas:
 
 ###
