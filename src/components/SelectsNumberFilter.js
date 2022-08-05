@@ -58,8 +58,8 @@ const SelectsNumberFilter = () => {
   };
 
   return (
-    <fieldset className="filter-number-div">
-      <legend>Filtros numéricos</legend>
+    <div className="filter-number-div">
+      <legend>NUMERIC FILTERS</legend>
       {usedFilters.length < allFilters.length && (
         <>
           <select
@@ -78,9 +78,9 @@ const SelectsNumberFilter = () => {
             value={ selectNumberFilter[0].comparison }
             onChange={ handleSelectChange }
           >
-            <option value="maior que">Maior que</option>
-            <option value="menor que">Menor que</option>
-            <option value="igual a">Igual a</option>
+            <option value="maior que">Greater than</option>
+            <option value="menor que">Less than</option>
+            <option value="igual a">Equal to</option>
           </select>
           <input
             type="number"
@@ -113,7 +113,7 @@ const SelectsNumberFilter = () => {
       >
         Remover filtros
       </button>
-    </fieldset>
+    </div>
   );
 };
 
