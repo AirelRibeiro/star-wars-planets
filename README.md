@@ -23,7 +23,7 @@
 <img width="50" height="50" src="./src/images/react_hooks.png" alt="React Hooks logo"  />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" width="52" alt="css3 logo"  />
 <p text-align="justify">
-O React é uma biblioteca JavaScript declarativa, que possibilitou a estruturação da página de forma mais simples e com uma interface amigável. Foi utilizado Context API, um recurso do React que permite compartilhar estado entre diversos componentes em uma árvore de componentes sem a necessidade de se passar props e callbacks manualmente entre eles; enquanto a construção desses estados foi possibilitada pelo uso dos React Hooks. A estilização da página foi feita com CSS.
+O React é uma biblioteca JavaScript declarativa, que possibilitou a estruturação da página de forma mais simples e com uma interface amigável. Foi utilizado Context API, um recurso do React que permite compartilhar estado entre diversos componentes, em uma árvore de componentes, sem a necessidade de se passar props e callbacks manualmente entre eles; enquanto a construção desses estados foi possibilitada pelo uso dos React Hooks. A estilização da página foi feita com CSS.
 </p>
 </div>
 
