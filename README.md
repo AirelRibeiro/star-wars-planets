@@ -1,7 +1,7 @@
 
 # <h1 align="center">⭐ STAR WARS PLANETS 🪐</h1>
 
-<p align="center"><img width="750" src="https://im4.ezgif.com/tmp/ezgif-4-e41cc40957.gif"  /></p>
+<p align="center">![Page gif](./src/images/ezgif.com-gif-maker.gif)</p>
 
 ## Descrição:
 
@@ -9,10 +9,10 @@
 
 ## Escolha seu transpote favorito e clique para navegar até a página:
 
-<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/b11295ad-e6ff-452f-a2f1-7b6d65c50f70/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
-<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/39db3582-89c2-43a1-802d-cc28c2b7f433/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
-<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/3a3fa9a1-ebb7-475c-bed2-f629e091f13c/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
-<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank"><img src="https://o.remove.bg/downloads/5d4a48e7-2f4b-48f7-834c-d8b210651486/image-removebg-preview.png" alt="Star Wars Spaceship"  /></a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank">![Page gif](./src/images/nave1.png)</a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank">![Page gif](./src/images/nave2.png)</a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank">![Page gif](./src/images/nave3.png)</a>
+<a href="https://star-wars-planets-2dfcjchsw-airelribeiro.vercel.app/" target="_blank">![Page gif](./src/images/nave4.png)</a>
 
 ## Ferramentas utilizadas:
 
