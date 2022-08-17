@@ -1,7 +1,7 @@
 
 # <h1 align="center">⭐ STAR WARS PLANETS 🪐</h1>
 
-<p align="center">![Page gif](./src/images/ezgif.com-gif-maker.gif)</p>
+<p align="center"><img src="./src/images/ezgif.com-gif-maker.gif" width="800"></p>
 
 ## Descrição:
 
